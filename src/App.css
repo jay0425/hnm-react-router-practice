@@ -5,6 +5,10 @@
   padding: 30px;
 }
 
+.login {
+  cursor: pointer;
+}
+
 .nav-section {
   display: flex;
   justify-content: center;
@@ -35,4 +39,20 @@
   border: none;
   margin-left: 8px;
   outline: none;
+}
+
+.card {
+  border: none !important;
+  cursor: pointer;
+}
+
+.card:hover {
+  position: relative;
+  z-index: 100;
+  transform: scale(1.3);
+  transition: transform 0.5s;
+}
+
+.card:not(:hover) {
+  transition: 0.5s ease-out;
 }

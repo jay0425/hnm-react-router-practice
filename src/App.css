@@ -2,7 +2,7 @@
   display: flex;
   justify-content: flex-end;
   gap: 10px;
-  padding: 30px;
+  padding: 0 30px;
 }
 
 .login {
@@ -91,7 +91,7 @@
 }
 
 .burger-menu {
-  margin: 30px;
+  margin: 0 30px;
 }
 
 .side-menu {

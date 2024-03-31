@@ -92,6 +92,18 @@
   .search-area {
     margin-bottom: 10px;
   }
+
+  .Row-area {
+    flex-direction: column;
+  }
+  .product-img {
+    display: flex;
+    justify-content: center;
+  }
+  .product-img img {
+    width: 80vw;
+    margin: 20px 0;
+  }
 }
 
 .burger-menu {

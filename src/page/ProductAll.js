@@ -3,16 +3,18 @@ import ProductCard from '../conponent/ProductCard';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Col, Container, Row } from 'react-bootstrap';
 import { useSearchParams } from 'react-router-dom';
+// 객체로 반환한건 {객체명} 이렇게 들고와야함.
+import { productAction } from '../redux/actions/productAction';
+import { UseDispatch, useDispatch, useSelector } from 'react-redux';
 
 const ProductAll = () => {
-  const [productList, setProductList] = useState([]);
+  const productList = useSelector((state) => state.product.productList);
   const [query, setQuery] = useSearchParams();
+  const dispatch = useDispatch();
+
   const getProducts = async () => {
     let searchQuery = query.get('q') || '';
-    let url = `https://my-json-server.typicode.com/jay0425/hnm-react-router-practice/products?q=${searchQuery}`;
-    let response = await fetch(url);
-    let data = await response.json();
-    setProductList(data);
+    dispatch(productAction.getProducts(searchQuery));
   };
   useEffect(() => {
     getProducts();

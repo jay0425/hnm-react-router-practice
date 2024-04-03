@@ -5,7 +5,8 @@ import { Col, Container, Row } from 'react-bootstrap';
 import { useSearchParams } from 'react-router-dom';
 // 객체로 반환한건 {객체명} 이렇게 들고와야함.
 import { productAction } from '../redux/actions/productAction';
-import { UseDispatch, useDispatch, useSelector } from 'react-redux';
+import { UsseDispatch, useDispatch, useSelector } from 'react-redux';
+import { fetchProducts } from '../redux/reducers/productSlice';
 
 const ProductAll = () => {
   const productList = useSelector((state) => state.product.productList);
@@ -14,7 +15,7 @@ const ProductAll = () => {
 
   const getProducts = async () => {
     let searchQuery = query.get('q') || '';
-    dispatch(productAction.getProducts(searchQuery));
+    dispatch(fetchProducts(searchQuery));
   };
   useEffect(() => {
     getProducts();

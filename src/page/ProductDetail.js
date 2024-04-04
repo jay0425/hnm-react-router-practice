@@ -3,13 +3,14 @@ import { Button, Col, Container, Row } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { productAction } from '../redux/actions/productAction';
+import { fetchProductDetail } from '../redux/reducers/productSlice';
 
 const ProductDetail = () => {
   let { id } = useParams();
   const product = useSelector((state) => state.product.selectedItem);
   const dispatch = useDispatch();
   const getProductDetail = async () => {
-    dispatch(productAction.getProductDetail(id));
+    dispatch(fetchProductDetail(id));
   };
 
   useEffect(() => {
